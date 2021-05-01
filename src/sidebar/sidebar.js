@@ -20,7 +20,7 @@ class SidebarComponent extends React.Component {
       return (
         <div className={classes.sidebarContainer}>
           <Button onClick={this.newNoteBtnClick} className={classes.newNoteBtn}>
-            {this.state.addingNote ? "Cancel" : "New Note"}
+            {this.state.addingNote ? "Cancel" : "+ New Note"}
           </Button>
           {this.state.addingNote ? (
             <div>
