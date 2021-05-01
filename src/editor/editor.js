@@ -41,7 +41,7 @@ class EditorComponent extends React.Component {
 
     return (
       <div className={classes.editorContainer}>
-        {/* <BorderColorIcon className={classes.editIcon}></BorderColorIcon> */}
+        <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
         <input
           className={classes.titleInput}
           placeholder="Doc Title"
@@ -49,7 +49,7 @@ class EditorComponent extends React.Component {
           value={this.state.title ? this.state.title : ""}
           onChange={(e) => this.updateTitle(e.target.value)}
         ></input>
-        <VideoEmbedComponent/>
+        <VideoEmbedComponent />
         <ReactQuill
           borderColor="#FFF4E3"
           theme="snow"
