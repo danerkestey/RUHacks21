@@ -3,7 +3,10 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import List from "@material-ui/core/List";
 import { Divider, Button } from "@material-ui/core";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 import SidebarItemComponent from "../sidebaritem/sidebaritem";
+import "./sidebar.css";
 
 class SidebarComponent extends React.Component {
   constructor() {
@@ -20,10 +23,30 @@ class SidebarComponent extends React.Component {
     if (notes && this.state.isOpen) {
       return (
         <div className={classes.sidebarContainer}>
-          <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
+          {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
             {this.state.isOpen ? "Cancel" : "+ Menu"}
-          </Button>
+          </Button> */}
+          <AiIcons.AiOutlineClose
+            onClick={this.setIsOpen}
+            className={classes.closeMenu}
+          />
 
+          <List>
+            {notes.map((_note, _index) => {
+              return (
+                <div key={_index}>
+                  <SidebarItemComponent
+                    _note={_note}
+                    _index={_index}
+                    selectedNoteIndex={selectedNoteIndex}
+                    selectNote={this.selectNote}
+                    deleteNote={this.deleteNote}
+                  ></SidebarItemComponent>
+                  <Divider></Divider>
+                </div>
+              );
+            })}
+          </List>
           <Button onClick={this.newNoteBtnClick} className={classes.newNoteBtn}>
             {this.state.addingNote ? "Cancel" : "+ New Note"}
           </Button>
@@ -43,30 +66,18 @@ class SidebarComponent extends React.Component {
               </Button>
             </div>
           ) : null}
-          <List>
-            {notes.map((_note, _index) => {
-              return (
-                <div key={_index}>
-                  <SidebarItemComponent
-                    _note={_note}
-                    _index={_index}
-                    selectedNoteIndex={selectedNoteIndex}
-                    selectNote={this.selectNote}
-                    deleteNote={this.deleteNote}
-                  ></SidebarItemComponent>
-                  <Divider></Divider>
-                </div>
-              );
-            })}
-          </List>
         </div>
       );
     } else if (notes && !this.state.isOpen) {
       return (
         <div className={classes.sidebarContainer}>
-          <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
+          {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
             {this.state.isOpen ? "Cancel" : "+ Menu"}
-          </Button>
+          </Button> */}
+          <FaIcons.FaBars
+            onClick={this.setIsOpen}
+            className={classes.openMenu}
+          />
         </div>
       );
     } else {
