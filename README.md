@@ -1,5 +1,12 @@
 #   made with <3 online
 
+#   Technologies we used
+
+#   node.js
+#   react
+#   figma
+#   
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
