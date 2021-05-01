@@ -8,13 +8,13 @@ import firebase from "firebase";
 // require("firebase/firestore");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC0BBegyHqR2I3pcYkXCgUlwJv07Ikc-nY",
-  authDomain: "ruhacks-ed214.firebaseapp.com",
-  projectId: "ruhacks-ed214",
-  storageBucket: "ruhacks-ed214.appspot.com",
-  messagingSenderId: "500970045768",
-  appId: "1:500970045768:web:285628c19db1d5efec337d",
-  measurementId: "G-0XVWC3S2CB",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGE,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT,
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
