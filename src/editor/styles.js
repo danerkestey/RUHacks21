@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#FFF4E3",
     height: "calc(100% - 35px)",
     position: "absolute",
     left: "0",
@@ -14,15 +14,15 @@ const styles = (theme) => ({
     //paddingBottom: "5px",
     fontSize: "24px",
     width: "100%",
-    backgroundColor: "#29487d",
-    color: "white",
+    backgroundColor: "#FFF4E3",
+    color: "#8B8B8B",
     paddingLeft: "12rem",
   },
   editIcon: {
     position: "absolute",
     left: "310px",
     top: "12px",
-    color: "white",
+    color: "#8B8B8B",
     width: "10",
     height: "10",
   },
@@ -30,6 +30,7 @@ const styles = (theme) => ({
     height: "100%",
     boxSizing: "border-box",
     paddingLeft: "12rem",
+    backgroundColor: "#FFF4E3",
   },
 });
 

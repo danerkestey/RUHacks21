@@ -24,7 +24,7 @@ class SidebarComponent extends React.Component {
 
     if (notes && this.state.isOpen) {
       return (
-        <div className={classes.sidebarContainer}>
+        <div className={classes.sidebarContainer1}>
           {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
             {this.state.isOpen ? "Cancel" : "Menu"}
           </Button> */}
@@ -90,7 +90,7 @@ class SidebarComponent extends React.Component {
       );
     } else if (notes && !this.state.isOpen) {
       return (
-        <div className={classes.sidebarContainer}>
+        <div className={classes.sidebarContainer2}>
           {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
             {this.state.isOpen ? "Cancel" : "+ Menu"}
           </Button> */}

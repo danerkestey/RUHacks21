@@ -23,13 +23,9 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log("Hi");
-  }
-
   render() {
     return (
-      <div className="app-container">
+      <div className="app-container" style={{ backgroundColor: "#FFF4E3" }}>
         <SidebarComponent
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
@@ -45,7 +41,6 @@ class App extends React.Component {
             noteUpdate={this.noteUpdate}
           ></EditorComponent>
         ) : null}
-        <VideoEmbedComponent/>
       </div>
     );
   }
