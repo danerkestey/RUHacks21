@@ -7,6 +7,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import SidebarItemComponent from "../sidebaritem/sidebaritem";
 import "./sidebar.css";
+import { StyledMenu, StyledMenuItem } from "./menuItems";
 
 class SidebarComponent extends React.Component {
   constructor() {
@@ -15,6 +16,7 @@ class SidebarComponent extends React.Component {
       addingNote: false,
       title: null,
       isOpen: false,
+      anchorEl: null,
     };
   }
   render() {
@@ -30,23 +32,42 @@ class SidebarComponent extends React.Component {
             onClick={this.setIsOpen}
             className={classes.closeMenu}
           />
-
-          <List>
+          <Button
+            aria-controls="customized-menu"
+            aria-haspopup="true"
+            variant="contained"
+            color="primary"
+            onClick={this.handleClick}
+            className={classes.notebookMenuButton}
+          >
+            Open Notebooks
+          </Button>
+          <StyledMenu
+            id="customized-menu"
+            anchorEl={this.state.anchorEl}
+            keepMounted
+            open={Boolean(this.state.anchorEl)}
+            onClose={this.handleClose}
+          >
+            {/* <List> */}
             {notes.map((_note, _index) => {
               return (
-                <div key={_index}>
-                  <SidebarItemComponent
-                    _note={_note}
-                    _index={_index}
-                    selectedNoteIndex={selectedNoteIndex}
-                    selectNote={this.selectNote}
-                    deleteNote={this.deleteNote}
-                  ></SidebarItemComponent>
-                  <Divider></Divider>
-                </div>
+                <StyledMenuItem>
+                  <div key={_index}>
+                    <SidebarItemComponent
+                      _note={_note}
+                      _index={_index}
+                      selectedNoteIndex={selectedNoteIndex}
+                      selectNote={this.selectNote}
+                      deleteNote={this.deleteNote}
+                    ></SidebarItemComponent>
+                    <Divider></Divider>
+                  </div>
+                </StyledMenuItem>
               );
             })}
-          </List>
+            {/* </List> */}
+          </StyledMenu>
           <Button onClick={this.newNoteBtnClick} className={classes.newNoteBtn}>
             {this.state.addingNote ? "Cancel" : "+ New Note"}
           </Button>
@@ -100,6 +121,14 @@ class SidebarComponent extends React.Component {
   };
   selectNote = (n, i) => this.props.selectNote(n, i);
   deleteNote = (note) => this.props.deleteNote(note);
+
+  handleClick = (event) => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
 }
 
 export default withStyles(styles)(SidebarComponent);

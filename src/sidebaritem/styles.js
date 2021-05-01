@@ -3,11 +3,12 @@ const styles = (theme) => ({
     cursor: "pointer",
   },
   textSection: {
-    maxWidth: "85%",
+    width: "85%",
   },
   deleteIcon: {
-    position: "absolute",
-    right: "5px",
+    position: "relative",
+    paddingRight: "1rem",
+    //right: "1rem",
     top: "calc(50% - 15px)",
     "&:hover": {
       color: "red",
