@@ -5,7 +5,8 @@ import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import VideoEmbedComponent from "../videoEmbed/videoEmbed";
-import "react-quill/dist/quill.snow.css";
+//import "react-quill/dist/quill.snow.css";
+import "./editor.css";
 
 class EditorComponent extends React.Component {
   constructor() {
@@ -49,11 +50,14 @@ class EditorComponent extends React.Component {
         ></input>
         <VideoEmbedComponent />
         <ReactQuill
+          borderColor="#FFF4E3"
           theme="snow"
           value={this.state.text}
           onChange={this.updateBody}
           style={{
             backgroundColor: "#FFF4E3",
+            paddingLeft: 15,
+            borderColor: "#FFF4E3",
           }}
         />
       </div>

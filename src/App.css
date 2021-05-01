@@ -19,12 +19,12 @@ body {
 }
 .quill {
   height: 100%;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   width: calc(100% - 300px);
   float: left;
 }
 .ql-container {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   height: calc(100% - 42px);
   overflow-y: scroll;
 }
