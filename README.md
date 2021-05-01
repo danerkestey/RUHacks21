@@ -1,5 +1,4 @@
-#   made with <3 online
-
+#   Note App
 #   Technologies we used
 
 #   node.js
