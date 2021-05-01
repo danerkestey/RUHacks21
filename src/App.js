@@ -2,8 +2,22 @@ import React from "react";
 import SidebarComponent from "./sidebar/sidebar";
 import EditorComponent from "./editor/editor";
 import "./App.css";
+import firebase from "firebase";
 
-const firebase = require("firebase");
+// const firebase = require("firebase");
+// require("firebase/firestore");
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC0BBegyHqR2I3pcYkXCgUlwJv07Ikc-nY",
+  authDomain: "ruhacks-ed214.firebaseapp.com",
+  projectId: "ruhacks-ed214",
+  storageBucket: "ruhacks-ed214.appspot.com",
+  messagingSenderId: "500970045768",
+  appId: "1:500970045768:web:285628c19db1d5efec337d",
+  measurementId: "G-0XVWC3S2CB",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 class App extends React.Component {
   constructor() {
