@@ -1,12 +1,20 @@
+/* eslint-disable no-undef */
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { SettingsProvider } from "./settings";
+import "./useSettings";
+
+const { settings, saveSettings } = useSettings();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SettingsProvider settings={settings}>
+      <App />
+    </SettingsProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
