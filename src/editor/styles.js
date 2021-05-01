@@ -12,7 +12,7 @@ const styles = (theme) => ({
     boxSizing: "border-box",
     border: "none",
     //paddingBottom: "5px",
-    fontSize: "24px",
+    fontSize: "40px",
     width: "100%",
     backgroundColor: "#FFF4E3",
     color: "#8B8B8B",
