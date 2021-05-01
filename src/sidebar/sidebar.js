@@ -11,14 +11,19 @@ class SidebarComponent extends React.Component {
     this.state = {
       addingNote: false,
       title: null,
+      isOpen: false,
     };
   }
   render() {
     const { notes, classes, selectedNoteIndex } = this.props;
 
-    if (notes) {
+    if (notes && this.state.isOpen) {
       return (
         <div className={classes.sidebarContainer}>
+          <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
+            {this.state.isOpen ? "Cancel" : "+ Menu"}
+          </Button>
+
           <Button onClick={this.newNoteBtnClick} className={classes.newNoteBtn}>
             {this.state.addingNote ? "Cancel" : "+ New Note"}
           </Button>
@@ -56,6 +61,14 @@ class SidebarComponent extends React.Component {
           </List>
         </div>
       );
+    } else if (notes && !this.state.isOpen) {
+      return (
+        <div className={classes.sidebarContainer}>
+          <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
+            {this.state.isOpen ? "Cancel" : "+ Menu"}
+          </Button>
+        </div>
+      );
     } else {
       return <div></div>;
     }
@@ -63,6 +76,9 @@ class SidebarComponent extends React.Component {
 
   newNoteBtnClick = () => {
     this.setState({ title: null, addingNote: !this.state.addingNote });
+  };
+  setIsOpen = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
   updateTitle = (txt) => {
     this.setState({ title: txt });
