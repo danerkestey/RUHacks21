@@ -1,10 +1,9 @@
 #   Note App
-#   Technologies we used
-
-#   node.js
-#   react
-#   figma
-#   
+###   Technologies we used
+   node.js
+   react
+   figma
+   
 
 # Getting Started with Create React App
 
