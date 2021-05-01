@@ -19,7 +19,8 @@ const styles = (theme) => ({
   newNoteBtn: {
     width: "100%",
     height: "35px",
-    borderBottom: "1px solid black",
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
     borderRadius: "0px",
     backgroundColor: "#FFF4E3",
     color: "#8B8B8B",
@@ -33,8 +34,9 @@ const styles = (theme) => ({
   openMenu: {
     width: "100%",
     height: "2rem",
-    borderBottom: "1px solid black",
     borderRadius: "0px",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
     backgroundColor: "#FFF4E3",
     fontSize: 18,
     color: "#8B8B8B",
@@ -46,9 +48,10 @@ const styles = (theme) => ({
   closeMenu: {
     width: "100%",
     height: "2rem",
-    borderBottom: "1px solid black",
     borderRadius: "0px",
     backgroundColor: "#FFF4E3",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
     fontSize: 18,
     color: "#8B8B8B",
     "&:hover": {
@@ -62,8 +65,12 @@ const styles = (theme) => ({
     height: "100%",
     boxSizing: "border-box",
     float: "left",
+    backgroundColor: "#FFF4E3",
     overflowY: "scroll",
     overflowX: "hidden",
+    position: "absolute",
+    flex: 1,
+    margin: 0,
   },
   newNoteInput: {
     width: "100%",
