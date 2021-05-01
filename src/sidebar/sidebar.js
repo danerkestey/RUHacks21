@@ -6,7 +6,7 @@ import { Divider, Button } from "@material-ui/core";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import SidebarItemComponent from "../sidebaritem/sidebaritem";
-import "./sidebar.css";
+//import "./sidebar.css";
 import { StyledMenu, StyledMenuItem } from "./menuItems";
 
 class SidebarComponent extends React.Component {
@@ -36,7 +36,6 @@ class SidebarComponent extends React.Component {
             aria-controls="customized-menu"
             aria-haspopup="true"
             variant="contained"
-            color="primary"
             onClick={this.handleClick}
             className={classes.notebookMenuButton}
           >

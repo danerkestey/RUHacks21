@@ -12,6 +12,12 @@ import SendIcon from "@material-ui/icons/Send";
 export const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
+    borderRadius: 10,
+    backgroundColor: "#FFF4E3",
+    marginRight: "1rem",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "8rem",
   },
 })((props) => (
   <Menu
@@ -29,15 +35,15 @@ export const StyledMenu = withStyles({
   />
 ));
 
-export const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    "&:focus": {
-      // backgroundColor: theme.palette.primary.main,
-      // "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-      //   color: theme.palette.common.white,
-      // },
-      backgroundColor: "#FFF4E3",
-      color: "#8B8B8B",
-    },
+export const StyledMenuItem = withStyles({
+  paper: {
+    // "&:focus": {
+    // backgroundColor: theme.palette.primary.main,
+    // "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+    //   color: theme.palette.common.white,
+    // },
+    backgroundColor: "#8B8B8B",
+    color: "#8B8B8B",
+    //},
   },
-}))(MenuItem);
+})(MenuItem);
