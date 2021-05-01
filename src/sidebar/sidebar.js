@@ -24,7 +24,7 @@ class SidebarComponent extends React.Component {
       return (
         <div className={classes.sidebarContainer}>
           {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
-            {this.state.isOpen ? "Cancel" : "+ Menu"}
+            {this.state.isOpen ? "Cancel" : "Menu"}
           </Button> */}
           <AiIcons.AiOutlineClose
             onClick={this.setIsOpen}
