@@ -28,7 +28,22 @@ const styles = (theme) => ({
       backgroundColor: "#8B8B8B",
       color: "#FFF4E3",
     },
-    // position: "absolute",
+    //position: "absolute",
+    bottom: "0rem",
+  },
+  notebookMenuButton: {
+    width: "100%",
+    height: "35px",
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
+    borderRadius: "0px",
+    backgroundColor: "#FFF4E3",
+    color: "#8B8B8B",
+    "&:hover": {
+      backgroundColor: "#8B8B8B",
+      color: "#FFF4E3",
+    },
+    //position: "absolute",
     bottom: "0rem",
   },
   openMenu: {
