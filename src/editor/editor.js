@@ -2,11 +2,12 @@
 /* eslint-disable no-undef */
 import React from "react";
 import ReactQuill from "react-quill";
-import debounce from "../helpers";
+import debounce, { sideBarValues } from "../helpers";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import VideoEmbedComponent from "../videoEmbed/videoEmbed";
+import { sidebarContext } from "../helpers";
 //import "react-quill/dist/quill.snow.css";
 import "../useSettings";
 import "./editor.css";
@@ -41,10 +42,19 @@ class EditorComponent extends React.Component {
 
   render() {
     const { classes } = this.props;
+<<<<<<< Updated upstream
     const { settings, saveSettings } = useSettings();
 
+=======
+    let sideBarValue = this.context;
+>>>>>>> Stashed changes
     return (
-      <div className={classes.editorContainer}>
+      <div
+        className={classes.editorContainer}
+        style={{
+          paddingLeft: sideBarValue.paddingLeft,
+        }}
+      >
         {/* <BorderColorIcon className={classes.editIcon}></BorderColorIcon> */}
         <input
           className={classes.titleInput}
@@ -52,6 +62,9 @@ class EditorComponent extends React.Component {
           // style={{fontFamily.}}
           value={this.state.title ? this.state.title : ""}
           onChange={(e) => this.updateTitle(e.target.value)}
+          style={{
+            paddingLeft: sideBarValue.paddingLeft,
+          }}
         ></input>
         <VideoEmbedComponent />
         <ReactQuill
@@ -62,7 +75,7 @@ class EditorComponent extends React.Component {
           placeholder="Compose an epic..."
           style={{
             backgroundColor: "#FFF4E3",
-            paddingLeft: 15,
+            paddingLeft: sideBarValue.paddingLeft,
             borderColor: "#FFF4E3",
           }}
         />
@@ -84,5 +97,7 @@ class EditorComponent extends React.Component {
     });
   }, 1500);
 }
+
+EditorComponent.contextType = sidebarContext;
 
 export default withStyles(styles)(EditorComponent);

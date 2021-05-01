@@ -78,7 +78,7 @@ const styles = (theme) => ({
   },
   sidebarContainer1: {
     marginTop: "0px",
-    width: "18rem",
+    // width: "18rem",
     height: "100%",
     boxSizing: "border-box",
     float: "left",
@@ -88,10 +88,11 @@ const styles = (theme) => ({
     position: "absolute",
     flex: 1,
     margin: 0,
+    zIndex: 1,
   },
   sidebarContainer2: {
     marginTop: "0px",
-    width: "6rem",
+    // width: "6rem",
     height: "100%",
     boxSizing: "border-box",
     float: "left",
@@ -101,6 +102,7 @@ const styles = (theme) => ({
     position: "absolute",
     flex: 1,
     margin: 0,
+    zIndex: 1,
   },
   newNoteInput: {
     width: "100%",
