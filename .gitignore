@@ -14,7 +14,8 @@
 
 # misc
 .DS_Store
-.env
+/src/.env
+/src/Firebase.js
 .env.local
 .env.development.local
 .env.test.local
