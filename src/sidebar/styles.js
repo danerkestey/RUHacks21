@@ -91,7 +91,7 @@ const styles = (theme) => ({
   },
   sidebarContainer2: {
     marginTop: "0px",
-    width: "12rem",
+    width: "6rem",
     height: "100%",
     boxSizing: "border-box",
     float: "left",
