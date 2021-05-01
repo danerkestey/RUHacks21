@@ -25,6 +25,7 @@ body {
 }
 .ql-container {
   /* box-sizing: border-box; */
+  height: 100%;
   height: calc(100% - 42px);
   overflow-y: scroll;
 }

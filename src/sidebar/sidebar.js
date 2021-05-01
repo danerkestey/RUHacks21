@@ -39,7 +39,7 @@ class SidebarComponent extends React.Component {
             onClick={this.handleClick}
             className={classes.notebookMenuButton}
           >
-            Open Notebooks
+            My Notes
           </Button>
           <StyledMenu
             id="customized-menu"

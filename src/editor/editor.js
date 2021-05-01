@@ -54,6 +54,7 @@ class EditorComponent extends React.Component {
           theme="snow"
           value={this.state.text}
           onChange={this.updateBody}
+          placeholder="Compose an epic..."
           style={{
             backgroundColor: "#FFF4E3",
             paddingLeft: 15,
