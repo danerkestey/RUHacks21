@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function debounce(a, b, c) {
   var d, e;
   return function () {
@@ -18,13 +16,3 @@ export default function debounce(a, b, c) {
 export function removeHTMLTags(str) {
   return str.replace(/<[^>]*>?/gm, "");
 }
-
-export const sideBarValues = {
-  small: {
-    paddingLeft: "6rem",
-  },
-  large: {
-    paddingLeft: "18rem",
-  },
-};
-export const sidebarContext = React.createContext(sideBarValues.small);

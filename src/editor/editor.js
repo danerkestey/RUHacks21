@@ -1,15 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-undef */
 import React from "react";
 import ReactQuill from "react-quill";
-import debounce, { sideBarValues } from "../helpers";
+import debounce from "../helpers";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import VideoEmbedComponent from "../videoEmbed/videoEmbed";
-import { sidebarContext } from "../helpers";
 //import "react-quill/dist/quill.snow.css";
-import "../useSettings";
 import "./editor.css";
 
 class EditorComponent extends React.Component {
@@ -42,24 +38,16 @@ class EditorComponent extends React.Component {
 
   render() {
     const { classes } = this.props;
-    let sideBarValue = this.context;
+
     return (
-      <div
-        className={classes.editorContainer}
-        style={{
-          paddingLeft: sideBarValue.paddingLeft,
-        }}
-      >
-        {/* <BorderColorIcon className={classes.editIcon}></BorderColorIcon> */}
+      <div className={classes.editorContainer}>
+        <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
         <input
           className={classes.titleInput}
           placeholder="Doc Title"
           // style={{fontFamily.}}
           value={this.state.title ? this.state.title : ""}
           onChange={(e) => this.updateTitle(e.target.value)}
-          style={{
-            paddingLeft: sideBarValue.paddingLeft,
-          }}
         ></input>
         <VideoEmbedComponent />
         <ReactQuill
@@ -70,7 +58,7 @@ class EditorComponent extends React.Component {
           placeholder="Compose an epic..."
           style={{
             backgroundColor: "#FFF4E3",
-            paddingLeft: sideBarValue.paddingLeft,
+            paddingLeft: 15,
             borderColor: "#FFF4E3",
           }}
         />
@@ -92,7 +80,5 @@ class EditorComponent extends React.Component {
     });
   }, 1500);
 }
-
-EditorComponent.contextType = sidebarContext;
 
 export default withStyles(styles)(EditorComponent);
