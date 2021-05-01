@@ -2,13 +2,10 @@ import React from "react";
 import SidebarComponent from "./sidebar/sidebar";
 import EditorComponent from "./editor/editor";
 import VideoEmbedComponent from "./videoEmbed/videoEmbed";
-
 // import embeddedVidComponent from "./videoEmbed/YoutubeEmbed";
 import "./App.css";
 import firebase from "firebase";
 import { firebaseConfig } from "./Firebase";
-// const firebase = require("firebase");
-// require("firebase/firestore");
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
