@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable no-undef */
 import React from "react";
 import ReactQuill from "react-quill";
 import debounce from "../helpers";
@@ -6,6 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import VideoEmbedComponent from "../videoEmbed/videoEmbed";
 //import "react-quill/dist/quill.snow.css";
+import "../useSettings";
 import "./editor.css";
 
 class EditorComponent extends React.Component {
@@ -38,6 +41,7 @@ class EditorComponent extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { settings, saveSettings } = useSettings();
 
     return (
       <div className={classes.editorContainer}>
@@ -49,7 +53,7 @@ class EditorComponent extends React.Component {
           value={this.state.title ? this.state.title : ""}
           onChange={(e) => this.updateTitle(e.target.value)}
         ></input>
-        <VideoEmbedComponent/>
+        <VideoEmbedComponent />
         <ReactQuill
           borderColor="#FFF4E3"
           theme="snow"
