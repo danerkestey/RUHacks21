@@ -13,7 +13,6 @@ const styles = (theme) => ({
       height: "100%",
       boxSizing: "border-box",
       float: "right",
-      overflowY: "scroll",
       overflowX: "hidden",
     }
   });
