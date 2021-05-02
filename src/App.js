@@ -2,6 +2,7 @@ import React from "react";
 import SidebarComponent from "./sidebar/sidebar";
 import EditorComponent from "./editor/editor";
 
+import "./fonts.css";
 import VideoEmbedComponent from "./videoEmbed/videoEmbed";
 import "./App.css";
 import firebase from "firebase";
