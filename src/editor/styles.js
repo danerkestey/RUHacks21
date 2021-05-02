@@ -25,7 +25,7 @@ const styles = (theme) => ({
   },
   editorContainer: {
     height: "100%",
-    width: "100%", // editor box width
+    width: "90%", // editor box width
     boxSizing: "border-box",
     paddingLeft: "6rem",
     backgroundColor: "#FFF4E3",
