@@ -1,7 +1,6 @@
 import React from "react";
 import ReactQuill from "react-quill";
 import debounce from "../helpers";
-import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import VideoEmbedComponent from "../videoEmbed/videoEmbed";
@@ -15,8 +14,14 @@ class EditorComponent extends React.Component {
       text: "",
       title: "",
       id: "",
+      sidebar: "6rem",
+      setSidebarValue: this.setSidebarValue,
     };
   }
+
+  setSidebarValue = (sidebar) => {
+    this.setState({ sidebar });
+  };
 
   componentDidMount = () => {
     this.setState({

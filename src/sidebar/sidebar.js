@@ -8,6 +8,8 @@ import * as AiIcons from "react-icons/ai";
 import SidebarItemComponent from "../sidebaritem/sidebaritem";
 //import "./sidebar.css";
 import { StyledMenu, StyledMenuItem } from "./menuItems";
+import { sidebarContext } from "../helpers";
+import { ToggleSidebarCancel, ToggleSidebarOpen } from "../toggleSidebar";
 
 class SidebarComponent extends React.Component {
   constructor() {
@@ -17,94 +19,107 @@ class SidebarComponent extends React.Component {
       title: null,
       isOpen: false,
       anchorEl: null,
+      sidebar: "6rem",
+      setSidebarValue: this.setSidebarValue,
     };
   }
+
+  setSidebarValue = (sidebar) => {
+    this.setState({ isOpen: !this.state.isOpen });
+    this.setState({ sidebar });
+  };
+
+  toggleSidebarValue = () => {
+    this.setState((state) => ({
+      sidebar: state.sidebar === "6rem" ? "18rem" : "6rem",
+    }));
+  };
   render() {
     const { notes, classes, selectedNoteIndex } = this.props;
 
     if (notes && this.state.isOpen) {
       return (
-        <div className={classes.sidebarContainer1}>
-          {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
-            {this.state.isOpen ? "Cancel" : "Menu"}
-          </Button> */}
-          <AiIcons.AiOutlineClose
-            onClick={this.setIsOpen}
-            className={classes.closeMenu}
-          />
-          <Button
-            aria-controls="customized-menu"
-            aria-haspopup="true"
-            variant="contained"
-            onClick={this.handleClick}
-            className={classes.notebookMenuButton}
+        <sidebarContext.Provider value={this.state}>
+          <div
+            className={classes.sidebarContainer1}
+            // style={{ width: this.state.sidebar }}
           >
-            My Notes
-          </Button>
-          <StyledMenu
-            id="customized-menu"
-            anchorEl={this.state.anchorEl}
-            keepMounted
-            open={Boolean(this.state.anchorEl)}
-            onClose={this.handleClose}
-          >
-            {/* <List> */}
-            {notes.map((_note, _index) => {
-              return (
-                <StyledMenuItem>
-                  <div key={_index}>
-                    <SidebarItemComponent
-                      _note={_note}
-                      _index={_index}
-                      selectedNoteIndex={selectedNoteIndex}
-                      selectNote={this.selectNote}
-                      deleteNote={this.deleteNote}
-                    ></SidebarItemComponent>
-                    <Divider></Divider>
-                  </div>
-                </StyledMenuItem>
-              );
-            })}
-            {/* </List> */}
-          </StyledMenu>
-          <Button onClick={this.newNoteBtnClick} className={classes.newNoteBtn}>
-            {this.state.addingNote ? "Cancel" : "+ New Note"}
-          </Button>
-          {this.state.addingNote ? (
-            <div>
-              <input
-                type="text"
-                className={classes.newNoteInput}
-                placeholder="Enter note title"
-                onKeyUp={(e) => this.updateTitle(e.target.value)}
-              ></input>
-              <Button
-                className={classes.newNoteSubmitBtn}
-                onClick={this.newNote}
-              >
-                Submit Note
-              </Button>
-            </div>
-          ) : null}
-        </div>
+            <ToggleSidebarOpen />
+            <Button
+              aria-controls="customized-menu"
+              aria-haspopup="true"
+              variant="contained"
+              onClick={this.handleClick}
+              className={classes.notebookMenuButton}
+            >
+              My Notes
+            </Button>
+            <StyledMenu
+              id="customized-menu"
+              anchorEl={this.state.anchorEl}
+              keepMounted
+              open={Boolean(this.state.anchorEl)}
+              onClose={this.handleClose}
+            >
+              {/* <List> */}
+              {notes.map((_note, _index) => {
+                return (
+                  <StyledMenuItem>
+                    <div key={_index}>
+                      <SidebarItemComponent
+                        _note={_note}
+                        _index={_index}
+                        selectedNoteIndex={selectedNoteIndex}
+                        selectNote={this.selectNote}
+                        deleteNote={this.deleteNote}
+                      ></SidebarItemComponent>
+                      <Divider></Divider>
+                    </div>
+                  </StyledMenuItem>
+                );
+              })}
+              {/* </List> */}
+            </StyledMenu>
+            <Button
+              onClick={this.newNoteBtnClick}
+              className={classes.newNoteBtn}
+            >
+              {this.state.addingNote ? "Cancel" : "+ New Note"}
+            </Button>
+            {this.state.addingNote ? (
+              <div>
+                <input
+                  type="text"
+                  className={classes.newNoteInput}
+                  placeholder="Enter note title"
+                  onKeyUp={(e) => this.updateTitle(e.target.value)}
+                ></input>
+                <Button
+                  className={classes.newNoteSubmitBtn}
+                  onClick={this.newNote}
+                >
+                  Submit Note
+                </Button>
+              </div>
+            ) : null}
+          </div>
+        </sidebarContext.Provider>
       );
     } else if (notes && !this.state.isOpen) {
       return (
-        <div className={classes.sidebarContainer2}>
-          {/* <Button onClick={this.setIsOpen} className={classes.newNoteBtn}>
-            {this.state.isOpen ? "Cancel" : "+ Menu"}
-          </Button> */}
-          <FaIcons.FaBars
-            onClick={this.setIsOpen}
-            className={classes.openMenu}
-          />
-        </div>
+        <sidebarContext.Provider value={this.state}>
+          <div
+            className={classes.sidebarContainer2}
+            // style={{ width: this.state.sidebar }}
+          >
+            <ToggleSidebarCancel />
+          </div>
+        </sidebarContext.Provider>
       );
     } else {
       return <div></div>;
     }
   }
-
   newNoteBtnClick = () => {
     this.setState({ title: null, addingNote: !this.state.addingNote });
   };

@@ -1,14 +1,13 @@
 import React from "react";
 import SidebarComponent from "./sidebar/sidebar";
 import EditorComponent from "./editor/editor";
-import VideoEmbedComponent from "./videoEmbed/videoEmbed";
 
-// import embeddedVidComponent from "./videoEmbed/YoutubeEmbed";
+import VideoEmbedComponent from "./videoEmbed/videoEmbed";
 import "./App.css";
 import firebase from "firebase";
 import { firebaseConfig } from "./Firebase";
-// const firebase = require("firebase");
-// require("firebase/firestore");
+
+import { sidebarContext } from "./helpers";
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -55,7 +54,7 @@ class App extends React.Component {
           data["id"] = _doc.id;
           return data;
         });
-        console.log(notes);
+        // console.log(notes);
         this.setState({ notes: notes });
       });
   };

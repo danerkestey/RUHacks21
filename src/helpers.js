@@ -16,3 +16,15 @@ export default function debounce(a, b, c) {
 export function removeHTMLTags(str) {
   return str.replace(/<[^>]*>?/gm, "");
 }
+export const sideBarValues = {
+  small: {
+    paddingLeft: "6rem",
+  },
+  large: {
+    paddingLeft: "18rem",
+  },
+};
+export const sidebarContext = React.createContext({
+  sidebar: "6rem",
+  setSidebarValue: () => {},
+});
