@@ -27,6 +27,7 @@ class SidebarComponent extends React.Component {
   setSidebarValue = (sidebar) => {
     this.setState({ isOpen: !this.state.isOpen });
     this.setState({ sidebar });
+    console.log(this.state.sidebar);
   };
 
   toggleSidebarValue = () => {

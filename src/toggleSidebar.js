@@ -9,7 +9,7 @@ export class ToggleSidebarOpen extends React.Component {
       <sidebarContext.Consumer>
         {({ sidebar, setSidebarValue }) => (
           <AiIcons.AiOutlineClose
-            onClick={() => setSidebarValue("18rem")}
+            onClick={() => setSidebarValue("6rem")}
             style={{
               width: "100%",
               height: "2rem",
@@ -37,7 +37,7 @@ export class ToggleSidebarCancel extends React.Component {
       <sidebarContext.Consumer>
         {({ sidebar, setSidebarValue }) => (
           <FaIcons.FaBars
-            onClick={() => setSidebarValue("6rem")}
+            onClick={() => setSidebarValue("18rem")}
             style={{
               width: "100%",
               height: "2rem",

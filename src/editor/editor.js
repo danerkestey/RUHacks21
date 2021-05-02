@@ -5,6 +5,7 @@ import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import VideoEmbedComponent from "../videoEmbed/videoEmbed";
+import { sidebarContext } from "../helpers";
 //import "react-quill/dist/quill.snow.css";
 import "./editor.css";
 
@@ -46,29 +47,35 @@ class EditorComponent extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.editorContainer}>
-        <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
-        <input
-          className={classes.titleInput}
-          placeholder="Doc Title"
-          // style={{fontFamily.}}
-          value={this.state.title ? this.state.title : ""}
-          onChange={(e) => this.updateTitle(e.target.value)}
-        ></input>
-        <VideoEmbedComponent />
-        <ReactQuill
-          borderColor="#FFF4E3"
-          theme="snow"
-          value={this.state.text}
-          onChange={this.updateBody}
-          placeholder="Compose an epic..."
-          style={{
-            backgroundColor: "#FFF4E3",
-            paddingLeft: 15,
-            borderColor: "#FFF4E3",
-          }}
-        />
-      </div>
+      <sidebarContext.Consumer>
+        {({ sidebar, setSidebarValue }) => (
+          <div
+            className={classes.editorContainer}
+            style={{ paddingLeft: sidebar }}
+          >
+            <input
+              className={classes.titleInput}
+              placeholder="Doc Title"
+              style={{ paddingLeft: sidebar }}
+              value={this.state.title ? this.state.title : ""}
+              onChange={(e) => this.updateTitle(e.target.value)}
+            ></input>
+            <VideoEmbedComponent />
+            <ReactQuill
+              borderColor="#FFF4E3"
+              theme="snow"
+              value={this.state.text}
+              onChange={this.updateBody}
+              placeholder="Compose an epic..."
+              style={{
+                backgroundColor: "#FFF4E3",
+                paddingLeft: sidebar,
+                borderColor: "#FFF4E3",
+              }}
+            />
+          </div>
+        )}
+      </sidebarContext.Consumer>
     );
   }
   updateBody = async (val) => {

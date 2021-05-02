@@ -16,7 +16,7 @@ const styles = (theme) => ({
     width: "100%",
     backgroundColor: "#FFF4E3",
     color: "#8B8B8B",
-    paddingLeft: "6rem",
+    //paddingLeft: "6rem",
   },
   // editIcon: {
   //   position: "absolute",
@@ -29,7 +29,7 @@ const styles = (theme) => ({
   editorContainer: {
     height: "100%",
     boxSizing: "border-box",
-    paddingLeft: "6rem",
+    //paddingLeft: "6rem",
     backgroundColor: "#FFF4E3",
   },
 });

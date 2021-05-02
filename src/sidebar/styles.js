@@ -88,6 +88,7 @@ const styles = (theme) => ({
     position: "absolute",
     flex: 1,
     margin: 0,
+    zIndex: 1,
   },
   sidebarContainer2: {
     marginTop: "0px",
@@ -101,6 +102,7 @@ const styles = (theme) => ({
     position: "absolute",
     flex: 1,
     margin: 0,
+    zIndex: 1,
   },
   newNoteInput: {
     width: "100%",
