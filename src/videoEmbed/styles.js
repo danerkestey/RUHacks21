@@ -12,7 +12,7 @@ const styles = (theme) => ({
     videoContainer: {
       position: "absolute",
       top: "50%",
-      left: "72%",
+      left: "77%",
       height: "30%",
       width: "30%",
       transform: "translate(-30%, -50%)",
@@ -21,7 +21,7 @@ const styles = (theme) => ({
 
     closeMenu: {
       top: "50%",
-      left: "70%",
+      left: "52%",
       position: "fixed",
       width: "100%",
       height: "2rem",
@@ -29,7 +29,7 @@ const styles = (theme) => ({
 
     openMenu: {
       top: "50%",
-      left: "70%",
+      left: "52%",
       position: "fixed",
       width: "100%",
       height: "2rem",

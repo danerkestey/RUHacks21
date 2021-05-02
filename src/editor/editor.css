@@ -55,7 +55,7 @@
   box-sizing: border-box;
   line-height: 1.42;
   height: 100%;
-  width: 100%;   /*editor real note part width */
+  width: 84%;   /*editor real note part width */
   outline: none;
   overflow-y: auto;
   padding: 12px 15px;
