@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import List from "@material-ui/core/List";
+import { Link } from "react-router-dom";
 import { Divider, Button } from "@material-ui/core";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
@@ -30,11 +31,6 @@ class SidebarComponent extends React.Component {
     console.log(this.state.sidebar);
   };
 
-  toggleSidebarValue = () => {
-    this.setState((state) => ({
-      sidebar: state.sidebar === "6rem" ? "18rem" : "6rem",
-    }));
-  };
   render() {
     const { notes, classes, selectedNoteIndex } = this.props;
 
@@ -46,6 +42,16 @@ class SidebarComponent extends React.Component {
             // style={{ width: this.state.sidebar }}
           >
             <ToggleSidebarOpen />
+            <Link to="/dashboard">
+              <Button
+                aria-controls="customized-menu"
+                aria-haspopup="true"
+                variant="contained"
+                className={classes.notebookMenuButton}
+              >
+                Dashboard
+              </Button>
+            </Link>
             <Button
               aria-controls="customized-menu"
               aria-haspopup="true"
@@ -103,6 +109,16 @@ class SidebarComponent extends React.Component {
                 </Button>
               </div>
             ) : null}
+            <Link to="/update-profile">
+              <Button
+                aria-controls="customized-menu"
+                aria-haspopup="true"
+                variant="contained"
+                className={classes.notebookMenuButton}
+              >
+                Update Profile
+              </Button>
+            </Link>
           </div>
         </sidebarContext.Provider>
       );

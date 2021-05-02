@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import SidebarComponentDashboard from "../sidebar/sidebarDashboard";
 
 export default function UpdateProfile() {
   const emailRef = useRef();
@@ -43,7 +44,8 @@ export default function UpdateProfile() {
 
   return (
     <>
-      <Card>
+      <SidebarComponentDashboard />
+      <Card style={{ padding: "6rem" }}>
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}

@@ -4,6 +4,7 @@ import styles from "./styles";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { Link } from "react-router-dom";
 import { removeHTMLTags } from "../helpers";
 
 class SidebarItemComponent extends React.Component {

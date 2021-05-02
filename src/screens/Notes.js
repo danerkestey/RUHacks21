@@ -48,10 +48,16 @@ class Notes extends React.Component {
         // console.log(notes);
         this.setState({ notes: notes });
       });
+
+    console.log(this.props.match.params.selectedIndex);
+    if (this.props.match.params.selectedIndex !== null) {
+      this.setState({ selectedNoteIndex: this.props.selectedIndex });
+    }
   };
 
   selectNote = (note, index) =>
     this.setState({ selectedNoteIndex: index, selectedNote: note });
+
   noteUpdate = (id, noteObj) => {
     firebase.firestore().collection("notes").doc(id).update({
       title: noteObj.title,
