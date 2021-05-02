@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function debounce(a, b, c) {
   var d, e;
   return function () {
