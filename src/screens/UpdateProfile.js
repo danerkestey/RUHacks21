@@ -47,11 +47,41 @@ export default function UpdateProfile() {
       <SidebarComponentDashboard />
       <Card style={{ padding: "6rem" }}>
         <Card.Body>
-          <h2 className="text-center mb-4">Update Profile</h2>
+          <h2
+            style={{
+              textAlign: "center",
+              fontFamily: "Nunito",
+              fontSize: 24,
+            }}
+          >
+            Update Profile
+          </h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
+          <Form
+            onSubmit={handleSubmit}
+            style={{
+              fontFamily: "Nunito",
+              alignItems: "center",
+              fontSize: 18,
+              padding: 10,
+            }}
+          >
+            <Form.Group
+              style={{
+                textAlign: "center",
+              }}
+              id="email"
+            >
+              <Form.Label
+                style={{
+                  fontFamily: "Nunito",
+                  textAlign: "center",
+                  fontSize: 18,
+                  padding: 10,
+                }}
+              >
+                Email:
+              </Form.Label>
               <Form.Control
                 type="email"
                 ref={emailRef}
@@ -59,25 +89,62 @@ export default function UpdateProfile() {
                 defaultValue={currentUser.email}
               />
             </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+            <Form.Group
+              id="password"
+              style={{
+                fontFamily: "Nunito",
+                textAlign: "center",
+                fontSize: 18,
+                padding: 10,
+              }}
+            >
+              <Form.Label>Password: </Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordRef}
                 placeholder="Leave blank to keep the same"
               />
             </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+            <Form.Group
+              id="password-confirm"
+              style={{
+                fontFamily: "Nunito",
+                textAlign: "center",
+                fontSize: 18,
+                padding: 10,
+              }}
+            >
+              <Form.Label>Password Confirmation: </Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordConfirmRef}
                 placeholder="Leave blank to keep the same"
               />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Update
-            </Button>
+            <div
+              style={{
+                fontFamily: "Nunito",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <Button
+                disabled={loading}
+                // className="w-100"
+                type="submit"
+                style={{
+                  fontFamily: "Nunito",
+                  alignItems: "center",
+                  textAlign: "center",
+                  backgroundColor: "#D2D2D2",
+                  // color: "#FFFFFF",
+                  fontSize: 18,
+                  borderRadius: 10,
+                }}
+              >
+                Update
+              </Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>
