@@ -10,11 +10,11 @@ const styles = (theme) => ({
     boxShadow: "0px 0px 2px black",
   },
   titleInput: {
-    height: "50px",
+    height: "5rem",
     boxSizing: "border-box",
     border: "none",
-    paddingTop: "20px",
-    //paddingBottom: "5px",
+    paddingTop: "3rem",
+    paddingBottom: "2rem",
     fontFamily: "Nunito",
     fontWeight: "700",
     fontSize: "40px",
@@ -25,7 +25,7 @@ const styles = (theme) => ({
   },
   editorContainer: {
     height: "100%",
-    width: "100%",               // editor box width
+    width: "100%", // editor box width
     boxSizing: "border-box",
     paddingLeft: "6rem",
     backgroundColor: "#FFF4E3",
