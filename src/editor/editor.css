@@ -1,3 +1,25 @@
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #FFF4E3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /*!
  * Quill Editor v1.3.0
  * https://quilljs.com/
@@ -41,6 +63,7 @@
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
+  max-height: 800px;
   min-height: 800px !important;
 }
 .ql-editor > * {
@@ -641,7 +664,7 @@
 .ql-snow .ql-editor pre.ql-syntax {
   background-color: #23241f;
   color: #f8f8f2;
-  overflow: visible;
+  overflow: hidden;
 }
 .ql-snow .ql-editor img {
   max-width: 100%;
