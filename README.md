@@ -23,6 +23,7 @@
 ## Technologies
 
 You can find our devpost submission [here](https://devpost.com/software/karaokebot).
+T_T
 
 ### JavaScript
 
