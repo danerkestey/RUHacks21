@@ -81,18 +81,18 @@ const Login = () => {
               </Button>
             </div>
           </Form>
-          <div
-            style={{
-              fontFamily: "Nunito",
-              textAlign: "center",
-              fontSize: 18,
-              padding: 10,
-            }}
-          >
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
         </Card.Body>
       </Card>
+      <div
+        style={{
+          fontFamily: "Nunito",
+          textAlign: "center",
+          fontSize: 18,
+          padding: 10,
+        }}
+      >
+        <Link to="/forgot">Forgot Password?</Link>
+      </div>
       <div
         style={{
           fontFamily: "Nunito",

@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../AuthContext";
 import { Link } from "react-router-dom";
 
-export default function ForgotPassword() {
+function ForgotPassword() {
   const emailRef = useRef();
   const { resetPassword } = useAuth();
   const [error, setError] = useState("");
@@ -28,7 +28,14 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <Card>
+      <Card
+        style={{
+          fontFamily: "Nunito",
+          textAlign: "center",
+          fontSize: 18,
+          padding: 10,
+        }}
+      >
         <Card.Body>
           <h2 className="text-center mb-4">Password Reset</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -42,14 +49,29 @@ export default function ForgotPassword() {
               Reset Password
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
-          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div
+        style={{
+          fontFamily: "Nunito",
+          textAlign: "center",
+          fontSize: 18,
+          padding: 10,
+        }}
+      >
+        <Link to="/login">Login</Link>
+      </div>
+      <div
+        style={{
+          fontFamily: "Nunito",
+          textAlign: "center",
+          fontSize: 18,
+          padding: 10,
+        }}
+      >
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
     </>
   );
 }
+export default ForgotPassword;
