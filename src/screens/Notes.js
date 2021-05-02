@@ -1,108 +1,105 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState, useEffect } from "react";
 import SidebarComponent from "../sidebar/sidebar";
 import EditorComponent from "../editor/editor";
 import firebase from "firebase";
+import { useAuth } from "../AuthContext";
+import { Link, useHistory } from "react-router-dom";
 
-class Notes extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedNoteIndex: null,
-      selectedNote: null,
-      notes: null,
-    };
-  }
+const Notes = () => {
+  const [selectedNoteIndex, setSelectedNoteIndex] = useState(null);
+  const [selectedNote, setSelectedNote] = useState(null);
+  const [notes, setNotes] = useState(null);
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
 
-  render() {
-    return (
-      <div className="app-container" style={{ backgroundColor: "#FFF4E3" }}>
-        <SidebarComponent
-          selectedNoteIndex={this.state.selectedNoteIndex}
-          notes={this.state.notes}
-          deleteNote={this.deleteNote}
-          selectNote={this.selectNote}
-          newNote={this.newNote}
-        ></SidebarComponent>
-        {this.state.selectedNote ? (
-          <EditorComponent
-            selectedNote={this.state.selectedNote}
-            selectedNoteIndex={this.state.selectedNoteIndex}
-            notes={this.state.notes}
-            noteUpdate={this.noteUpdate}
-          ></EditorComponent>
-        ) : null}
-      </div>
-    );
-  }
+  let emailTemp = currentUser.email;
+  let email = emailTemp.replace(/^\s+|\s+$/g, "");
 
-  componentDidMount = () => {
+  useEffect(() => {
     firebase
       .firestore()
-      .collection("notes")
+      .collection(email)
       .onSnapshot((serverUpdate) => {
-        const notes = serverUpdate.docs.map((_doc) => {
+        const notes_temp = serverUpdate.docs.map((_doc) => {
           const data = _doc.data();
           data["id"] = _doc.id;
           return data;
         });
         // console.log(notes);
-        this.setState({ notes: notes });
+        setNotes(notes_temp);
       });
+  });
 
-    console.log(this.props.match.params.selectedIndex);
-    if (this.props.match.params.selectedIndex !== null) {
-      this.setState({ selectedNoteIndex: this.props.selectedIndex });
-    }
+  const selectNote = (note, index) => {
+    setSelectedNoteIndex(index);
+    setSelectedNote(note);
   };
 
-  selectNote = (note, index) =>
-    this.setState({ selectedNoteIndex: index, selectedNote: note });
-
-  noteUpdate = (id, noteObj) => {
-    firebase.firestore().collection("notes").doc(id).update({
+  const noteUpdate = (id, noteObj) => {
+    firebase.firestore().collection(email).doc(id).update({
       title: noteObj.title,
       body: noteObj.body,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
   };
-  newNote = async (title) => {
+
+  const newNote = async (title) => {
     const note = {
       title: title,
       body: "",
     };
-    const newFromDB = await firebase.firestore().collection("notes").add({
+    const newFromDB = await firebase.firestore().collection(email).add({
       title: note.title,
       body: note.body,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     const newID = newFromDB.id;
-    await this.setState({ notes: [...this.state.notes, note] });
-    const newNoteIndex = this.state.notes.indexOf(
-      this.state.notes.filter((_note) => _note.id === newID)[0]
+    await setNotes([...notes, note]);
+    const newNoteIndex = notes.indexOf(
+      notes.filter((_note) => _note.id === newID)[0]
     );
-    this.setState({
-      selectedNote: this.state.notes[newNoteIndex],
-      selectedNoteIndex: newNoteIndex,
-    });
+    setSelectedNote(notes[newNoteIndex]);
+    setSelectedNoteIndex(newNoteIndex);
   };
-  deleteNote = async (note) => {
-    const noteIndex = this.state.notes.indexOf(note);
-    await this.setState({
-      notes: this.state.notes.filter((_note) => _note !== note),
-    });
-    if (this.state.selectedNoteIndex === noteIndex) {
-      this.setState({ selectedNoteIndex: null, selectedNote: null });
+
+  const deleteNote = async (note) => {
+    const noteIndex = notes.indexOf(note);
+    await setNotes(notes.filter((_note) => _note !== note));
+
+    if (selectedNoteIndex === noteIndex) {
+      setSelectedNoteIndex(null);
+      setSelectedNote(null);
     } else {
-      this.state.notes.length > 1
-        ? this.selectNote(
-            this.state.notes[this.state.selectedNoteIndex - 1],
-            this.state.selectedNoteIndex - 1
-          )
-        : this.setState({ selectedNoteIndex: null, selectedNote: null });
+      if (notes.length > 1) {
+        selectNote(notes[selectedNoteIndex - 1], selectedNoteIndex - 1);
+      } else {
+        setSelectedNoteIndex(null);
+        setSelectedNote(null);
+      }
     }
 
-    firebase.firestore().collection("notes").doc(note.id).delete();
+    firebase.firestore().collection(email).doc(note.id).delete();
   };
-}
 
+  return (
+    <div className="app-container" style={{ backgroundColor: "#FFF4E3" }}>
+      <SidebarComponent
+        selectedNoteIndex={selectedNoteIndex}
+        notes={notes}
+        deleteNote={deleteNote}
+        selectNote={selectNote}
+        newNote={newNote}
+      ></SidebarComponent>
+      {selectedNote ? (
+        <EditorComponent
+          selectedNote={selectedNote}
+          selectedNoteIndex={selectedNoteIndex}
+          notes={notes}
+          noteUpdate={noteUpdate}
+        ></EditorComponent>
+      ) : null}
+    </div>
+  );
+};
 export default Notes;
