@@ -81,7 +81,11 @@ class EditorComponent extends React.Component {
               value={this.state.title ? this.state.title : ""}
               onChange={(e) => this.updateTitle(e.target.value)}
             ></input>
-            <VideoEmbedComponent />
+            <VideoEmbedComponent 
+              style={{
+                zIndex: "1000",
+              }}
+            />
             <ReactQuill
               borderColor="#FFF4E3"
               theme="snow"

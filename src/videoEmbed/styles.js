@@ -1,21 +1,38 @@
 const styles = (theme) => ({
     root: {
-      backgroundColor: "#8B8B8B",
-      height: "calc(100% - 35px)",
-      position: "fixed",
-      // top: "50%",
-      left: "0",
-      width: "12rem",
-      boxShadow: "0px 0px 2px black",
-    },
-    videoContainer: {
-    //   position: "absolute",
-      // marginTop: "0px",
-      // top: "50%",
-      width: "30%",
+      // backgroundColor: "#8B8B8B",
       height: "100%",
-      float: "right",
-      overflowX: "hidden",
+      width: "100%",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      zIndex: "1000",
+    },
+
+    videoContainer: {
+      position: "absolute",
+      top: "50%",
+      left: "72%",
+      height: "30%",
+      width: "30%",
+      transform: "translate(-30%, -50%)",
+      zIndex: "1000",
+    },
+
+    closeMenu: {
+      top: "50%",
+      left: "70%",
+      position: "fixed",
+      width: "100%",
+      height: "2rem",
+    },
+
+    openMenu: {
+      top: "50%",
+      left: "70%",
+      position: "fixed",
+      width: "100%",
+      height: "2rem",
     }
   });
   
