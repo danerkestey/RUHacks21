@@ -1,9 +1,9 @@
-### RU Hacks 2021
+# RU Hacks 2021
 
-# Made with love online!
+## Made with love online!
 
 <h1 align="center">
-  <a href=""><img src="assets/img/mic.gif" width="250"/></a>
+  <a href=""><img src="assets/img/note.gif" width="250"/></a>
   <br>
   Inscription
 </h1>
