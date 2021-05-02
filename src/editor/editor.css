@@ -415,11 +415,7 @@
   padding: 3px 5px;
   width: 28px;
 }
-.ql-snow.ql-toolbar button svg,
-.ql-snow .ql-toolbar button svg {
-  float: left;
-  height: 100%;
-}
+
 .ql-snow.ql-toolbar button:active:hover,
 .ql-snow .ql-toolbar button:active:hover {
   outline: none;
