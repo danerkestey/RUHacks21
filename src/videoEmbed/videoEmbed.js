@@ -51,6 +51,19 @@ class videoEmbedComponent extends React.Component {
             className={classes.closeMenu}
           />
           <YoutubeEmbedComponent embedId={this.state.url} />
+          <div>
+            <input
+              type="text"
+              className={classes.newVideoInput}
+              placeholder="Enter Youtube Video"
+            ></input>
+            <Button
+              className={classes.newVideoSubmitBtn}
+              // onClick={this.newVideo}
+            >
+              Change Video
+            </Button>
+          </div>
         </div>
       );
     } else if (!this.state.isOpen) {
@@ -68,6 +81,9 @@ class videoEmbedComponent extends React.Component {
   setIsOpen = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
+
+  // newVideo = () => {
+  // };
 }
 
 export default withStyles(styles)(videoEmbedComponent);
