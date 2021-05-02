@@ -56,6 +56,7 @@ class videoEmbedComponent extends React.Component {
               type="text"
               className={classes.newVideoInput}
               placeholder="Enter Youtube Video"
+              onChange={(e) => this.setState({ url: e.target.value })}
             ></input>
             <Button
               className={classes.newVideoSubmitBtn}
