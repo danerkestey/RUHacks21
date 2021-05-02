@@ -36,7 +36,19 @@ class videoEmbedComponent extends React.Component {
       isOpenVideo: false,
       isOpenSearch: false,
       url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      urlTemp: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     };
+  }
+
+  convert_youtube(input) {
+    var pattern = /(?:http?s?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(\S+)/g;
+    if (pattern.test(input)) {
+      var replacement = "http://www.youtube.com/embed/$1";
+      var input = input.replace(pattern, replacement);
+      // For start time, turn get param & into ?
+      var input = input.replace("&amp;t=", "?t=");
+    }
+    return input;
   }
 
   render() {
@@ -50,14 +62,24 @@ class videoEmbedComponent extends React.Component {
             onClick={this.setIsOpen}
             className={classes.closeMenu}
           />
-          <YoutubeEmbedComponent url={this.state.url} />
+          <div className="video-responsive">
+            <iframe
+              width="100%"
+              height="100%"
+              src={this.state.url}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Embedded youtube"
+            />
+          </div>{" "}
           <div>
             <input
               type="text"
               className={classes.newVideoInput}
               placeholder="Enter Youtube Video"
-              value={this.state.url ? this.state.url : ""}
-              onChange={(e) => this.setState({ url: e.target.value })}
+              value={this.state.urlTemp ? this.state.urlTemp : ""}
+              onChange={(e) => this.setState({ urlTemp: e.target.value })}
             ></input>
             <Button
               className={classes.newVideoSubmitBtn}
@@ -85,7 +107,9 @@ class videoEmbedComponent extends React.Component {
   };
 
   newVideo = () => {
-    // this.setState({ url:  });
+    let val = this.convert_youtube(this.state.urlTemp);
+    console.log(val);
+    this.setState({ url: val });
   };
 }
 
