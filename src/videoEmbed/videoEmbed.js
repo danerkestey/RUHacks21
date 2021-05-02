@@ -35,7 +35,7 @@ class videoEmbedComponent extends React.Component {
       isOpen: false,
       isOpenVideo: false,
       isOpenSearch: false,
-      url: "dQw4w9WgXcQ",
+      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     };
   }
 
@@ -56,11 +56,12 @@ class videoEmbedComponent extends React.Component {
               type="text"
               className={classes.newVideoInput}
               placeholder="Enter Youtube Video"
+              value={this.state.url ? this.state.url : ""}
               onChange={(e) => this.setState({ url: e.target.value })}
             ></input>
             <Button
               className={classes.newVideoSubmitBtn}
-              // onClick={this.newVideo}
+              onClick={this.newVideo}
             >
               Change Video
             </Button>
@@ -83,8 +84,9 @@ class videoEmbedComponent extends React.Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
-  // newVideo = () => {
-  // };
+  newVideo = () => {
+    // this.setState({ url:  });
+  };
 }
 
 export default withStyles(styles)(videoEmbedComponent);

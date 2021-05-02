@@ -33,7 +33,28 @@ const styles = (theme) => ({
       position: "fixed",
       width: "100%",
       height: "2rem",
-    }
+    },
+    newVideoSubmitBtn: {
+      width: "100%",
+      backgroundColor: "#8B8B8B",
+      borderRadius: "30px",
+      color: "#FFF4E3",
+      "&:hover": {
+        backgroundColor: "#FFF4E3",
+        color: "#8B8B8B",
+      },
+    },
+    newVideoInput: {
+      width: "100%",
+      margin: "0px",
+      height: "35px",
+      outline: "none",
+      border: "none",
+      paddingLeft: "5px",
+      "&:focus": {
+        outline: "2px solid rgba(81, 203, 238, 1)",
+      },
+    },
   });
   
   export default styles;
