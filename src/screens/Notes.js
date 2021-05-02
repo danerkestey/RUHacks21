@@ -5,6 +5,7 @@ import EditorComponent from "../editor/editor";
 import firebase from "firebase";
 import { useAuth } from "../AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import { Form, Button, Card, Alert } from "react-bootstrap";
 
 const Notes = () => {
   const [selectedNoteIndex, setSelectedNoteIndex] = useState(null);
@@ -98,7 +99,22 @@ const Notes = () => {
           notes={notes}
           noteUpdate={noteUpdate}
         ></EditorComponent>
-      ) : null}
+      ) : (
+        <div>
+          <Card
+            style={{
+              fontFamily: "Nunito",
+              textAlign: "center",
+              fontSize: 18,
+              padding: 10,
+            }}
+          >
+            <Card.Body>
+              <h2>Select the Notes you want to Edit</h2>
+            </Card.Body>
+          </Card>
+        </div>
+      )}
     </div>
   );
 };
