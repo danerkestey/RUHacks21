@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import styles from "./styles.js";
 
 const Login = () => {
   const emailRef = useRef();
@@ -28,7 +29,8 @@ const Login = () => {
 
   return (
     <>
-      <Card>
+      {/* <Card> */}
+      <Card style={{ fontFamily: "Nunito" }}>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
