@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Alert } from "react-bootstrap";
+import { TextareaAutosize } from "@material-ui/core";
 import { useAuth } from "../AuthContext";
 import SidebarComponentDashboard from "../sidebar/sidebarDashboard";
 import { Link, useHistory } from "react-router-dom";
@@ -25,24 +26,94 @@ export default function Dashboard() {
   return (
     <>
       <SidebarComponentDashboard />
-      <Card style={{ paddingLeft: "6rem" }}>
+      <Card
+        style={{
+          paddingLeft: "6rem",
+          textAlign: "center",
+        }}
+      >
         <Card.Body>
-          <h2 className="text-center mb-4">Profile</h2>
+          <h1
+            style={{
+              fontFamily: "Nunito",
+              alignItems: "center",
+              fontSize: 24,
+              padding: 10,
+            }}
+          >
+            Profile
+          </h1>
           {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
-          </Link>
-          <Link to="/notes" className="btn btn-primary w-100 mt-3">
-            View Notes
-          </Link>
+          <p
+            style={{
+              fontFamily: "Nunito",
+              alignItems: "center",
+              fontSize: 18,
+              padding: 10,
+            }}
+          >
+            <strong>Email:</strong> {currentUser.email}
+          </p>
+          <div>
+            <Button
+              // className="w-100"
+              type="submit"
+              style={{
+                fontFamily: "Nunito",
+                alignItems: "center",
+                textAlign: "center",
+                backgroundColor: "#D2D2D2",
+                // color: "#FFFFFF",
+                fontSize: 18,
+                borderRadius: 10,
+              }}
+            >
+              <Link to="/update-profile" style={{ textDecoration: "none" }}>
+                Update Profile
+              </Link>
+            </Button>
+          </div>
+
+          <div>
+            <Button
+              // className="w-100"
+              type="submit"
+              style={{
+                fontFamily: "Nunito",
+                alignItems: "center",
+                textAlign: "center",
+                backgroundColor: "#D2D2D2",
+                // color: "#FFFFFF",
+                fontSize: 18,
+                borderRadius: 10,
+              }}
+            >
+              <Link to="/notes" style={{ textDecoration: "none" }}>
+                View Notes
+              </Link>
+            </Button>
+          </div>
+
+          <div>
+            <Button
+              variant="link"
+              onClick={handleLogout}
+              type="submit"
+              style={{
+                fontFamily: "Nunito",
+                alignItems: "center",
+                textAlign: "center",
+                backgroundColor: "#D2D2D2",
+                // color: "#FFFFFF",
+                fontSize: 18,
+                borderRadius: 10,
+              }}
+            >
+              Log Out
+            </Button>
+          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>
-          Log Out
-        </Button>
-      </div>
     </>
   );
 }

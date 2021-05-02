@@ -17,7 +17,7 @@
 
 - [Amardeep Singh](https://github.com/amardeep-1)<br>
 - [Daner Yasin](https://github.com/danerkestey)<br>
-- [Saif Aldin](https://github.com/saifaldin14)<br>
+- [Saif Al-Din](https://github.com/saifaldin14)<br>
 - [Taha Amir](https://github.com/mashwaniT)<br>
 
 ## Technologies
@@ -28,7 +28,9 @@ You can find our devpost submission [here](https://devpost.com/software/inscript
 
 - Node.js
 - React
-- Firebase
+- React Context API
+- Firebase Authentification
+- Firebase Firestore (database)
 - Google Fonts API
 
 ### CSS

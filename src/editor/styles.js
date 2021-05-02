@@ -26,6 +26,7 @@ const styles = (theme) => ({
   editorContainer: {
     height: "100%",
     width: "90%", // editor box width
+    fontFamily: "Nunito",
     boxSizing: "border-box",
     paddingLeft: "6rem",
     backgroundColor: "#FFF4E3",
