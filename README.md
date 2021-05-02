@@ -10,7 +10,7 @@
 
 <blockquote align="center">
   <em>Inscription</em> is a modern and minimal online note editor with built in video-watching and cloud saving.<br>
-  Use Inscription to take your note-taking to the next level!
+  Use Inscription to elevate your note-taking to the next level!
 </blockquote>
 
 ## Contributors
