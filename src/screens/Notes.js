@@ -1,9 +1,6 @@
 import React from "react";
 import SidebarComponent from "../sidebar/sidebar";
 import EditorComponent from "../editor/editor";
-
-import "../fonts.css";
-import "./Notes.css";
 import firebase from "firebase";
 
 class Notes extends React.Component {
