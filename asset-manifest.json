@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/RUHacks21/static/css/main.0fe4b475.chunk.css",
+    "main.js": "/RUHacks21/static/js/main.92503151.chunk.js",
+    "main.js.map": "/RUHacks21/static/js/main.92503151.chunk.js.map",
+    "runtime-main.js": "/RUHacks21/static/js/runtime-main.3f353aef.js",
+    "runtime-main.js.map": "/RUHacks21/static/js/runtime-main.3f353aef.js.map",
+    "static/js/2.983d4b9f.chunk.js": "/RUHacks21/static/js/2.983d4b9f.chunk.js",
+    "static/js/2.983d4b9f.chunk.js.map": "/RUHacks21/static/js/2.983d4b9f.chunk.js.map",
+    "index.html": "/RUHacks21/index.html",
+    "static/css/main.0fe4b475.chunk.css.map": "/RUHacks21/static/css/main.0fe4b475.chunk.css.map",
+    "static/js/2.983d4b9f.chunk.js.LICENSE.txt": "/RUHacks21/static/js/2.983d4b9f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f353aef.js",
+    "static/js/2.983d4b9f.chunk.js",
+    "static/css/main.0fe4b475.chunk.css",
+    "static/js/main.92503151.chunk.js"
+  ]
+}
