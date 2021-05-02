@@ -9,7 +9,7 @@
 </h1>
 
 <blockquote align="center">
-  <em>Inscription</em> a modern and minimal note editor with built in video-watching and cloud saving.<br>
+  <em>Inscription</em> a modern and minimal online note editor with built in video-watching and cloud saving.<br>
   Use Inscription to take your note-taking to the next level!
 </blockquote>
 
