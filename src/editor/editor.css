@@ -822,6 +822,10 @@
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="monospace"]::before {
   content: "Monospace";
 }
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="nunito"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="nunito"]::before {
+  content: "Nunito";
+}
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="serif"]::before {
   font-family: Georgia, Times New Roman, serif;
 }

@@ -19,6 +19,25 @@ class EditorComponent extends React.Component {
       sidebar: "6rem",
       setSidebarValue: this.setSidebarValue,
     };
+    this.modules = {
+			toolbar: [
+		      [{ 'font': [] }],
+		      [{ 'size': ['small', false, 'large', 'huge'] }],
+		      ['bold', 'italic', 'underline'],
+		      [{'list': 'ordered'}, {'list': 'bullet'}],
+		      [{ 'align': [] }],
+		      [{ 'color': [] }, { 'background': [] }],
+		      ['clean']
+		    ]
+		};
+		this.formats = [
+      'font',
+      'size',
+      'bold', 'italic', 'underline',
+      'list', 'bullet',
+      'align',
+      'color', 'background'
+    ];
   }
 
   setSidebarValue = (sidebar) => {
@@ -43,6 +62,7 @@ class EditorComponent extends React.Component {
     }
   };
 
+
   render() {
     const { classes } = this.props;
 
@@ -64,6 +84,8 @@ class EditorComponent extends React.Component {
             <ReactQuill
               borderColor="#FFF4E3"
               theme="snow"
+              modules={this.modules}
+              formats={this.formats}
               value={this.state.text}
               onChange={this.updateBody}
               placeholder="Compose an epic..."
