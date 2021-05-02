@@ -50,7 +50,7 @@ class videoEmbedComponent extends React.Component {
             onClick={this.setIsOpen}
             className={classes.closeMenu}
           />
-          <YoutubeEmbedComponent embedId={this.state.url} />
+          <YoutubeEmbedComponent url={this.state.url} />
           <div>
             <input
               type="text"
