@@ -42,7 +42,7 @@ class SidebarComponent extends React.Component {
             // style={{ width: this.state.sidebar }}
           >
             <ToggleSidebarOpen />
-            <Link to="/dashboard">
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>
               <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
@@ -109,7 +109,7 @@ class SidebarComponent extends React.Component {
                 </Button>
               </div>
             ) : null}
-            <Link to="/update-profile">
+            <Link to="/update-profile" style={{ textDecoration: "none" }}>
               <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"

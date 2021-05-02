@@ -42,7 +42,7 @@ class SidebarComponentDashboard extends React.Component {
             // style={{ width: this.state.sidebar }}
           >
             <ToggleSidebarOpen />
-            <Link to="/dashboard">
+            <Link to="/dashboard" style={{ textDecoration: "none" }}>
               <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
@@ -52,7 +52,7 @@ class SidebarComponentDashboard extends React.Component {
                 Dashboard
               </Button>
             </Link>
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: "none" }}>
               <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
@@ -64,7 +64,7 @@ class SidebarComponentDashboard extends React.Component {
               </Button>
             </Link>
 
-            <Link to="/update-profile">
+            <Link to="/update-profile" style={{ textDecoration: "none" }}>
               <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
