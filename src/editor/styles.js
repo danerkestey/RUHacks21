@@ -1,3 +1,5 @@
+import "../fonts.css";
+
 const styles = (theme) => ({
   root: {
     backgroundColor: "#FFF4E3",
@@ -14,6 +16,7 @@ const styles = (theme) => ({
     paddingTop: "20px",
     //paddingBottom: "5px",
     fontFamily: "Nunito",
+    fontWeight: "700",
     fontSize: "40px",
     width: "75%",
     backgroundColor: "#FFF4E3",
