@@ -59,8 +59,8 @@ const Notes = () => {
     const newNoteIndex = notes.indexOf(
       notes.filter((_note) => _note.id === newID)[0]
     );
-    setSelectedNoteIndex(notes[newNoteIndex]);
-    setSelectedNote(newNoteIndex);
+    setSelectedNote(notes[newNoteIndex]);
+    setSelectedNoteIndex(newNoteIndex);
   };
 
   const deleteNote = async (note) => {
