@@ -20,9 +20,9 @@
 - [Saif Al-Din](https://github.com/saifaldin14)<br>
 - [Taha Amir](https://github.com/mashwaniT)<br>
 
-## Technologies
-
 You can find our devpost submission [here](https://devpost.com/software/inscription).
+
+## Technologies
 
 ### JavaScript
 
